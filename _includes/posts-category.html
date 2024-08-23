@@ -2,3 +2,10 @@
 {%- for post in posts -%}
   {% include archive-single.html %}
 {%- endfor -%}
+
+<p>Categories:
+  {% for category in page.categories %}
+    <a href="/category/{{ category | downcase }}.html">{{ category }}</a>
+    {% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+</p>
